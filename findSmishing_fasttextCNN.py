@@ -24,7 +24,7 @@ os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
 data = []
 labels = []
 
-with open('C:/Users/soyeon/Downloads/smishing_training.pkl', 'rb') as f:
+with open('C:/Users/soyeon/Downloads/smishing_training_real.pkl', 'rb') as f:
     data, labels = pickle.load(f) # 단 한줄씩 읽어옴
 
 x_train, x_test, y_train, y_test = train_test_split(data, labels, test_size=0.2)
@@ -34,7 +34,7 @@ print("y_train", y_train.shape)
 print("y_test", y_test.shape)
 
 # Building the model
-input_seq = Input(shape=(MAX_WORDS_IN_SEQ, 300))#, dtype='int32')
+input_seq = Input(shape=(MAX_WORDS_IN_SEQ, 3288))#, dtype='int32')
 print(input_seq.shape)
 #embed_seq = Embedding(3288, EMBED_DIM, embeddings_initializer='glorot_normal', input_length=MAX_WORDS_IN_SEQ)(input_seq)
 #print(embed_seq.shape)

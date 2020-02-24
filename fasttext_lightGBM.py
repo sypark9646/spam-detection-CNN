@@ -1,6 +1,7 @@
 # coding: utf-8
 import numpy as np
 import lightgbm as lgb
+import pickle
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import confusion_matrix
@@ -50,7 +51,8 @@ if __name__ == '__main__':
 
     print('Saving model...')
     # save model to file
-    gbm.save_model('model.txt')
+    with open('model.pkl', 'wb') as fout:
+        pickle.dump(gbm, fout)
 
     print('Starting predicting...')
     #prediction

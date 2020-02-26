@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*- 
 import fasttext
 
 from keras.utils import to_categorical
